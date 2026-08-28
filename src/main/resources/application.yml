@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: test
+
+server:
+  port: 8081
+
+app:
+  message: "Hello from application.yml"
+
