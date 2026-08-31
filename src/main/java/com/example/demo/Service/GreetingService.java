@@ -9,4 +9,11 @@ public class GreetingService {
         System.out.println("Hello World!");
     }
 	
+    public String getGreeting(String name) {
+        return "Hello, " + name + "!" ;
+    }
+    
+    
+    
+    
 }
