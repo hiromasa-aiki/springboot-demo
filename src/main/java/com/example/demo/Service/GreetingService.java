@@ -10,6 +10,11 @@ public class GreetingService {
     }
 	
     public String getGreeting(String name) {
+    	
+    		if (name.equals("") || name == null) {
+    			name = "Guest";
+    		}
+    	
         return "Hello, " + name + "!" ;
     }
     
