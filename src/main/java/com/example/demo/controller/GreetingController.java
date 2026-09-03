@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import jakarta.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,12 +34,12 @@ public class GreetingController {
     public String hello2(@RequestParam(value = "name", defaultValue = "World2") String name) {
     	greetingService.sayHello();
     	System.out.println(geetingComponent.getAaa());
-    	return String.	format("Hello %s!", name);
+    	return String.format("Hello %s!", name);
     }
     
     @PostMapping("/hellopost")
     public String hellopost(@RequestParam(value = "name", defaultValue = "WorldPost") String name) {
-    	return String.	format("Hello %s!", name);
+    	return String.format("Hello %s!", name);
     }
     
     @GetMapping("/employees/1")
@@ -47,7 +49,7 @@ public class GreetingController {
     }
     
     @PostMapping("/employees")
-    public EmployeeResponse createEmployee(@RequestBody EmployeeRequest request) {
+    public EmployeeResponse createEmployee(@Valid @RequestBody EmployeeRequest request) {
     	
     	return new EmployeeResponse(1L, request.getName(), request.getEmail());
     }

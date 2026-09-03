@@ -1,6 +1,13 @@
 package com.example.demo.dto;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class EmployeeRequest {
+	
+	@NotBlank
+	private String name;
+	@NotBlank
+	private String email;
 
 	public String getName() {
 		return name;
@@ -14,6 +21,5 @@ public class EmployeeRequest {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	private String name;
-	private String email;
+
 }
