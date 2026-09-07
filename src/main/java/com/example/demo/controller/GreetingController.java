@@ -32,26 +32,26 @@ public class GreetingController {
 	
     @GetMapping("/hello2")
     public String hello2(@RequestParam(value = "name", defaultValue = "World2") String name) {
-    	greetingService.sayHello();
-    	System.out.println(geetingComponent.getAaa());
-    	return String.format("Hello %s!", name);
+    		greetingService.sayHello();
+    		System.out.println(geetingComponent.getAaa());
+     	return String.format("Hello %s!", name);
     }
     
     @PostMapping("/hellopost")
-    public String hellopost(@RequestParam(value = "name", defaultValue = "WorldPost") String name) {
-    	return String.format("Hello %s!", name);
+    	public String hellopost(@RequestParam(value = "name", defaultValue = "WorldPost") String name) {
+    		return String.format("Hello %s!", name);
     }
     
     @GetMapping("/employees/1")
     public EmployeeResponse getEmployee() {
     	
-    	return new EmployeeResponse(1L, "田中", "tanaka@example.com");
+    		return new EmployeeResponse(1L, "田中", "tanaka@example.com");
     }
     
     @PostMapping("/employees")
     public EmployeeResponse createEmployee(@Valid @RequestBody EmployeeRequest request) {
     	
-    	return new EmployeeResponse(1L, request.getName(), request.getEmail());
+    		return new EmployeeResponse(1L, request.getName(), request.getEmail());
     }
     
     @Value("${app.message}")

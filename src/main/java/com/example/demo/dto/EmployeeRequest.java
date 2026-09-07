@@ -4,9 +4,9 @@ import jakarta.validation.constraints.NotBlank;
 
 public class EmployeeRequest {
 	
-	@NotBlank
+	@NotBlank(message = "名前は必須です")
 	private String name;
-	@NotBlank
+	@NotBlank(message = "メールアドレスは必須です")
 	private String email;
 
 	public String getName() {
