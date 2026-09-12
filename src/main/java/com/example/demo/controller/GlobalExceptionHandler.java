@@ -3,8 +3,10 @@ package com.example.demo.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 // @RestControllerAdviceとはControllerで発生した例外をまとめて処理するクラス
@@ -15,6 +17,7 @@ public class GlobalExceptionHandler {
 	// @Valid によるバリデーションエラーが発生すると、Spring Boot「MethodArgumentNotValidException」という
 	// 例外を投げる
 	@ExceptionHandler(MethodArgumentNotValidException.class)
+	@ResponseStatus(HttpStatus.BAD_REQUEST)
     public Map<String, String> handleValidationException(MethodArgumentNotValidException ex) {
 		
 		System.out.println("★★★ GlobalExceptionHandlerが呼ばれました ★★★");
