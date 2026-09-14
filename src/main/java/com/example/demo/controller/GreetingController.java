@@ -49,7 +49,8 @@ public class GreetingController {
     @GetMapping("/employees/1")
     public EmployeeResponse getEmployee() {
     	
-    		return new EmployeeResponse(1L, "田中", "tanaka@example.com");
+    	return greetingService.getEmployee(1L);
+    	
     }
     
     @PostMapping("/employees")
