@@ -20,10 +20,14 @@ import com.example.demo.dto.EmployeeResponse;
 @RestController
 public class GreetingController {
 	
-	@Autowired
 	private GreetingService greetingService;
 	@Autowired
 	private GreetingComponent geetingComponent;
+	
+	public GreetingController(GreetingService greetingService) {
+	    this.greetingService = greetingService;
+	}
+	
 	
     @GetMapping("/hello")
     public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
